@@ -10,7 +10,7 @@ yay -Syu brave visual-studio-code-bin spotify minecraft-launcher gnome-terminal-
 sudo systemctl enable cups.service
 sudo systemctl start cups.service
 sudo systemctl enable avahi-daemon.searvice
-sed -i 's/hosts: mymachines resolve \[!UNAVAIL=return\] files myhostname dns/hosts: mymachines mdns_minimal \[NOTFOUND=return\] resolve \[!UNAVAIL=return\] files myhostname dns/' /etc/nsswitch.conf
+sudo sed -i 's/hosts: mymachines resolve/hosts: mymachines mdns_minimal \[NOTFOUND=return\] resolve /' /etc/nsswitch.conf
 sudo systemctl restart cups.service
 cp pictures/user.jpg  ~/Pictures/user.jpg
 cp pictures/wallpaper.jpg ~/Pictures/wallpaper.jpg
