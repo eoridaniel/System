@@ -17,4 +17,5 @@ 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
 - walper
 - coursor
 - user icon
--
+- vitals
+- tray icons
