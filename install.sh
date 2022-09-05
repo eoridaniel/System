@@ -13,8 +13,9 @@ sudo systemctl enable avahi-daemon.searvice
 sudo systemctl start avahi-daemon.searvice
 sudo sed -i 's/hosts: mymachines resolve/hosts: mymachines mdns_minimal \[NOTFOUND=return\] resolve /' /etc/nsswitch.conf
 sudo systemctl restart cups.service
-cp pictures/user.jpg  ~/Pictures/user.jpg
-cp pictures/wallpaper.jpg ~/Pictures/wallpaper.jpg
+cp pictures/user.jpg  /var/lib/AccountService/icon/$USER
+cp pictures/wallpaper.jpg /usr/share/wallpaper.jpg
+gsettings set org.gnome.desktop.background picture-uri file:///usr/share/wallpaper.jpg
 cp scripts/.bashrc ~/.bashrc
 cp scripts/.project_managment.sh ~/.project_managment.sh
 cp scripts/.prompt_style.sh ~/prompt_style.sh
