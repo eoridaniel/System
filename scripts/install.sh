@@ -7,6 +7,7 @@ makepkg -si
 cd ..
 rm -rf yay-git
 yay -S brave, visual-studio-code-bin, spotify, minecraft-launcher, gnome-terminal-transparency, hplip, hplip-plugin
-sudo pacman -Syu discord, cups, avahi, steam
+sudo pacman -S discord, cups, avahi, steam
 
 
+ls
