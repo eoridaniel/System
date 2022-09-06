@@ -36,4 +36,4 @@ You nedd to install and configure this GNOME extensions!
 - Vitals
 - Tray Icons
 
-Then configure the applications for you.
+Then configure the applications for youand mount the `Vault`.
