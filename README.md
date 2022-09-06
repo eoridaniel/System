@@ -10,7 +10,7 @@ chown +x install.sh
 ```
 Then press `y` or whatever when you need.
 
-## The installed packages and some other thins: 
+## The installed packages and some other things: 
 1. yay
 2. brave
 3. Printer:
@@ -25,12 +25,12 @@ Then press `y` or whatever when you need.
 7. gnome-terminal-transparency
 8. steam
 9. minecraft-launcher
-10. scripts
-11. walper
-12. user icon
-13. mysql-workbanch
-14. ntfs-3g
-15. gnome-shell-extensions
+10. mysql-workbanch
+11. ntfs-3g
+12. gnome-shell-extensions
+13. scripts
+14. walper
+15. user icon
 
 You nedd to install and configure this GNOME extensions!
 - Vitals
