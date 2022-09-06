@@ -22,4 +22,9 @@ cp scripts/.prompt_style.sh ~/prompt_style.sh
 cp styles/gtk.css ~/.config/gtk-3.0/gtk.css
 cp -r cursor/Skyrim ~/.icons/Skyrim
 source ~/.bashrc
+clear 
+for var in {0..10}
+do
+    echo "More of the isntall is complited. You nedd to install GNOME Vitals and Tray Icons, then configure them."
+done
 rm -fr ../System
