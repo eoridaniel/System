@@ -27,4 +27,3 @@ sudo cp -r cursor/Skyrim ~/.icons/Skyrim
 yay -S brave-bin
 source ~/.bashrc
 rm -fr ../System
-reboot now
