@@ -5,7 +5,7 @@ sudo chown -R $USER:$USER ./yay-git
 cd yay-git
 makepkg -si
 cd ..
-sed -zi 's/#\[multilib\]\n#/\[multilib\]\n/' /etc/pacman.conf
+sudo sed -zi 's/#\[multilib\]\n#/\[multilib\]\n/' /etc/pacman.conf
 yay -Syu brave visual-studio-code-bin spotify minecraft-launcher gnome-terminal-transparency hplip hplip-plugin discord cups avahi steam nss-mdns gnome-shell-extensions ntfs-3g mysql-workbanch
 sudo systemctl enable cups.service
 sudo systemctl start cups.service
