@@ -37,3 +37,4 @@ You nedd to install and configure this GNOME extensions!
 - Tray Icons
 
 Then configure the applications for youand mount the `Vault`.
+Terminal text color code: `#2C9B02`
