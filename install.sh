@@ -19,6 +19,8 @@ sudo cp pictures/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/wallpaper.jpg
 gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/backgrounds/wallpaper.jpg
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+git config --global user.name "Eőri Dániel"
+git config --global user.email "eori.dani@gamil.com"
 cp scripts/.bashrc ~/.bashrc
 cp scripts/.project_managment.sh ~/.project_managment.sh
 cp scripts/.prompt_style.sh ~/.prompt_style.sh

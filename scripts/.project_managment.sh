@@ -1,11 +1,9 @@
 #!/bin/bash
 
 function createpp(){
-    mkdir -p ~/Documents/Projects/$1
-    cd ~/Documents/Projects/$1
+    mkdir -p ~/Projects/$1
+    cd ~/Projects/$1
     git init
-    git config --global user.name "Eőri Dániel"
-    git config --global user.email "eori.dani@gamil.com"
     mkdir venv
     touch main.py
     python3 -m venv ~/Documents/Projects/$1/venv
@@ -16,9 +14,7 @@ function createpp(){
 }
 
 function openpp(){
-    cd ~/Documents/Projects/$1
-    git config --global user.name "Eőri Dániel"
-    git config --global user.email "eori.dani@gamil.com"
+    cd ~/Projects/$1
     code .
     source venv/bin/activate
 }
