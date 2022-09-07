@@ -3,7 +3,7 @@
 ## PTA
 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
 ## Installation
-When you clonr this git `cd` into it's folder, then run the following commands.
+When you clone this git `cd` into it's folder, then run the following commands.
 ```
 sudo chown +x install.sh
 /.install.sh
