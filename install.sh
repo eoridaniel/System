@@ -14,7 +14,7 @@ sudo systemctl start avahi-daemon.service
 sudo sed -i 's/hosts: mymachines resolve/hosts: mymachines mdns_minimal \[NOTFOUND=return\] resolve /' /etc/nsswitch.conf
 sudo systemctl restart cups.service
 sudo cp pictures/user.jpg  /var/lib/AccountsService/icons/$USER
-sudo sed -i "s/Icon=*/Icon=\/var\/lib\/AccountsService\/icon\/$USER/" /var/lib/AccountsService/users/$USER
+sudo sed -i "s/Icon=.*/Icon=\/var\/lib\/AccountsService\/icons\/$USER/" /var/lib/AccountsService/users/$USER
 sudo cp pictures/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/wallpaper.jpg
 gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/backgrounds/wallpaper.jpg
@@ -27,3 +27,4 @@ sudo cp -r cursor/Skyrim ~/.icons/Skyrim
 yay -S brave-bin
 source ~/.bashrc
 rm -fr ../System
+reboot now
