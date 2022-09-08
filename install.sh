@@ -5,6 +5,7 @@ sudo chown -R $USER:$USER ./yay-git
 cd yay-git
 makepkg -si
 cd ..
+yay -Syu brave-bin
 sudo sed -zi 's/#\[multilib\]\n#/\[multilib\]\n/' /etc/pacman.conf
 yay -Syu visual-studio-code-bin spotify minecraft-launcher gnome-terminal-transparency hplip hplip-plugin discord cups avahi steam nss-mdns gnome-shell-extensions ntfs-3g mysql-workbench
 sudo systemctl enable cups.service
@@ -28,6 +29,5 @@ cp scripts/.prompt_style.sh ~/.prompt_style.sh
 sudo cp styles/gtk.css ~/.config/gtk-3.0/gtk.css
 mkdir ~/.icons
 sudo cp -r cursor/Skyrim ~/.icons/Skyrim
-yay -S brave-bin
 source ~/.bashrc
 rm -fr ../System
