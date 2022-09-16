@@ -7,7 +7,7 @@ makepkg -si
 cd ..
 yay -Syu brave-bin
 sudo sed -zi 's/#\[multilib\]\n#/\[multilib\]\n/' /etc/pacman.conf
-yay -Syu visual-studio-code-bin spotify minecraft-launcher gnome-terminal-transparency hplip hplip-plugin discord cups avahi steam nss-mdns gnome-shell-extensions ntfs-3g mysql-workbench
+yay -Syu visual-studio-code-bin spotify minecraft-launcher gnome-terminal-transparency hplip hplip-plugin discord cups avahi steam nss-mdns gnome-shell-extensions ntfs-3g
 sudo systemctl enable cups.service
 sudo systemctl start cups.service
 sudo systemctl enable avahi-daemon.service
