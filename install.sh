@@ -9,7 +9,7 @@ cd ..
 #install packages
 yay -Syu brave-bin gnome-shell-extensions
 sudo sed -zi 's/#\[multilib\]\n#/\[multilib\]\n/' /etc/pacman.conf
-yay -Syu visual-studio-code-bin spotify minecraft-launcher gnome-terminal-transparency hplip hplip-plugin discord cups avahi steam nss-mdns ntfs-3g mariadb kite bluez bluez-utils
+yay -Syu visual-studio-code-bin spotify minecraft-launcher gnome-terminal-transparency hplip hplip-plugin discord cups avahi steam nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg
 #setup bluetooth
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
