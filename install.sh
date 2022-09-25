@@ -44,7 +44,12 @@ cp scripts/.bashrc ~/.bashrc
 cp scripts/.project_managment.sh ~/.project_managment.sh
 cp scripts/.prompt_style.sh ~/.prompt_style.sh
 source ~/.bashrc
-#install gtk style
+#install theme
+mkdir ~/.themes
+sudo cp styles/.themes ~/.themes
+gnome-shell-extension-tool -e user-theme
+gsettings set org.gnome.desktop.interface gtk-theme Dracula-standard-buttons
+gsettings set org.gnome.shell.extensions.user-theme name Dracula-shell-v40
 sudo cp styles/gtk.css ~/.config/gtk-3.0/gtk.css
 #setup coursor
 mkdir ~/.icons
