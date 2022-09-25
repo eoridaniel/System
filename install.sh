@@ -50,7 +50,7 @@ tar -xf themes.tar.gz
 mkdir ~/.themes
 mkdir ~/.icons
 sudo cp -r .icons ~/.icons
-sudo cp .themes ~/.themes
+sudo cp -r .themes ~/.themes
 gnome-shell-extension-tool -e user-theme
 gsettings set org.gnome.desktop.interface icon-theme Dracula
 gsettings set org.gnome.desktop.interface gtk-theme Dracula
