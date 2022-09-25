@@ -46,8 +46,9 @@ cp scripts/.prompt_style.sh ~/.prompt_style.sh
 source ~/.bashrc
 #install gtk style
 sudo cp styles/gtk.css ~/.config/gtk-3.0/gtk.css
-#prepare coursor
+#setup coursor
 mkdir ~/.icons
 sudo cp -r cursor/Skyrim ~/.icons/Skyrim
+sudo gsettings set org.gnome.desktop.interface cursor-theme 'Skyrim'
 #clean up
 rm -fr ../System
