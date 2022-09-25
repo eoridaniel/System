@@ -46,14 +46,19 @@ cp scripts/.prompt_style.sh ~/.prompt_style.sh
 source ~/.bashrc
 #install theme
 mkdir ~/.themes
-sudo cp styles/.themes ~/.themes
-gnome-shell-extension-tool -e user-theme
-gsettings set org.gnome.desktop.interface gtk-theme Dracula-standard-buttons
-gsettings set org.gnome.shell.extensions.user-theme name Dracula-shell-v40
-sudo cp styles/gtk.css ~/.config/gtk-3.0/gtk.css
-#setup coursor
 mkdir ~/.icons
-sudo cp -r cursor/Skyrim ~/.icons/Skyrim
-sudo gsettings set org.gnome.desktop.interface cursor-theme 'Skyrim'
+sudo cp -r .icons ~/.icons
+sudo cp .themes ~/.themes
+gnome-shell-extension-tool -e user-theme
+gsettings set org.gnome.desktop.interface icon-theme Dracula
+gsettings set org.gnome.desktop.interface gtk-theme Dracula
+gsettings set org.gnome.shell.extensions.user-theme name Dracula
+#setup coursor
+sudo gsettings set org.gnome.desktop.interface cursor-theme Skyrim
+#configure visual studio code
+git clone https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions/theme-dracula
+cd ~/.vscode/extensions/theme-dracula
+npm install
+npm run build
 #clean up
 rm -fr ../System
