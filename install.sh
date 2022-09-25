@@ -45,6 +45,8 @@ cp scripts/.project_managment.sh ~/.project_managment.sh
 cp scripts/.prompt_style.sh ~/.prompt_style.sh
 source ~/.bashrc
 #install theme
+tar -xf icons.tar.gz
+tar -xf themes.tar.gz
 mkdir ~/.themes
 mkdir ~/.icons
 sudo cp -r .icons ~/.icons
