@@ -1,5 +1,46 @@
 #!/bin/bash
 
+#functions for gaming
+gameing(){
+    read -p 'Do you want to play on this mashine?(y/n)' game
+    if [ $game == "y" ]
+    then
+        sudo sed -zi 's/#\[multilib\]\n#/\[multilib\]\n/' /etc/pacman.conf
+        sudo pacman -Syu
+        gpu
+        sudo pacman -S --needed wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls \
+        mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error \
+        lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo \
+        sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama \
+        ncurses lib32-ncurses ocl-icd lib32-ocl-icd libxslt lib32-libxslt libva lib32-libva gtk3 \
+        lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader
+        yay -S minecraft-launcher steam lutris-git
+    elif [ $game == "n" ]
+    then
+        echo 'Install nothing for gaming.'
+    else
+        echo 'Wrong input!'
+        gameing
+    fi
+}
+gpu(){
+    read -p 'What tipy of GPU you use? AMD NVIDIA or Intel(a/n/i)' gputype
+    if [ $gputype == "a" ]
+    then
+        sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+    elif [ $gputype == "n" ]
+    then
+        sudo pacman -S --needed nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+    elif [ $gputype == "i" ]
+    then
+        sudo pacman -S --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+    else
+        echo 'Wrong input!'
+        gpu
+    fi
+}
+
+
 #install yay
 sudo git clone https://aur.archlinux.org/yay-git.git
 sudo chown -R $USER:$USER ./yay-git
@@ -7,9 +48,10 @@ cd yay-git
 makepkg -si
 cd ..
 #install packages
+sudo pacman -Syu
 yay -Syu brave-bin gnome-shell-extensions
-sudo sed -zi 's/#\[multilib\]\n#/\[multilib\]\n/' /etc/pacman.conf
-yay -Syu visual-studio-code-bin spotify minecraft-launcher gnome-terminal-transparency hplip hplip-plugin discord cups avahi steam nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg
+yay -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg
+gameing
 #setup bluetooth
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
