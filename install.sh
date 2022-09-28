@@ -104,5 +104,5 @@ git clone https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions
 cd ~/.vscode/extensions/theme-dracula
 npm install
 npm run build
-#clean up
-rm -fr ../System
+#reboot
+sudo reboot now
