@@ -93,7 +93,7 @@ mkdir ~/.themes
 mkdir ~/.icons
 sudo cp -r .icons ~/.icons
 sudo cp -r .themes ~/.themes
-gnome-shell-extension-tool -e user-theme
+gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
 gsettings set org.gnome.desktop.interface icon-theme Dracula
 gsettings set org.gnome.desktop.interface gtk-theme Dracula
 gsettings set org.gnome.shell.extensions.user-theme name Dracula
