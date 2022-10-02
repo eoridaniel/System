@@ -107,5 +107,14 @@ npm run build
 #setup fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
+fish
+git clone https://github.com/oh-my-fish/oh-my-fish
+cd oh-my-fish
+bin/install --offline
+omf install eden
+eden_toggle_host
+eden_toggle_ssh_tag
+eden_prompt_char '$'
+sudo sed -i 's/ˇ/@/' ~/.config/fish/functions/fish_prompt.fish 
 #reboot
 sudo reboot now

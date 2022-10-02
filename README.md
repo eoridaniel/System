@@ -39,6 +39,7 @@ Then press `y` or whatever when you need.
 21. bluez
 22. bluez-utils
 23. xorg
+24. fish
 
 You nedd to install and configure this GNOME extensions!
 - Vitals
