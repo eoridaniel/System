@@ -50,7 +50,7 @@ cd ..
 #install packages
 sudo pacman -Syu
 yay -Syu brave-bin gnome-shell-extensions gnome-browser-connector
-yay -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg
+yay -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish
 gameing
 #setup bluetooth
 sudo systemctl enable bluetooth.service
@@ -104,5 +104,8 @@ git clone https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions
 cd ~/.vscode/extensions/theme-dracula
 npm install
 npm run build
+#setup fish
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
 #reboot
 sudo reboot now
