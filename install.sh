@@ -115,6 +115,7 @@ omf install eden
 eden_toggle_host
 eden_toggle_ssh_tag
 eden_prompt_char '$'
-sudo sed -i 's/ˇ/@/' ~/.config/fish/functions/fish_prompt.fish 
+sudo sed -i 's/(hostname|cut -d . -f 1)ˇ$USER(hostname|cut -d . -f 1)/$USER@(hostname|cut -d . -f 1)/' ~/.config/fish/functions/fish_prompt.fish
+sudo sed -i 's/set_color blue/set color a17fd6/' ~/.config/fish/functions/fish_prompt.fish
 #reboot
 sudo reboot now
