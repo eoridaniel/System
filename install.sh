@@ -49,7 +49,7 @@ makepkg -si
 cd ..
 #install packages
 sudo pacman -Syu
-yay -Syu brave-bin gnome-shell-extensions
+yay -Syu brave-bin gnome-shell-extensions gnome-browser-connector
 yay -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg
 gameing
 #setup bluetooth

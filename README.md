@@ -25,16 +25,26 @@ Then press `y` or whatever when you need.
 7. gnome-terminal-transparency
 8. steam
 9. minecraft-launcher
-10. mysql-workbanch
+10. gpu drivers
 11. ntfs-3g
 12. gnome-shell-extensions
 13. scripts
 14. walper
 15. user icon
+16. Dracula theme for shell gtk and vscode
+17. gnome-browser-connector
+18. lutris-git and its dependencies
+19. mariadb
+20. kite
+21. bluez
+22. bluez-utils
+23. xorg
 
 You nedd to install and configure this GNOME extensions!
 - Vitals
 - Tray Icons
+- Open Weather
+
 
 Then configure the applications for youand mount the `Vault`.
 Terminal text color code: `#2C9B02`
