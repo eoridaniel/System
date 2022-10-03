@@ -84,15 +84,15 @@ mkdir ~/Projects
 #install custom bash commands
 cp scripts/.bashrc ~/.bashrc
 cp scripts/.project_managment.sh ~/.project_managment.sh
-cp scripts/.prompt_style.sh ~/.prompt_style.sh
+cp scripts/.prompt_style.sh ~/.prompt_style.shn
 source ~/.bashrc
 #install theme
 tar -xf icons.tar.gz
 tar -xf themes.tar.gz
 mkdir ~/.themes
 mkdir ~/.icons
-sudo cp -r .icons ~/.icons
-sudo cp -r .themes ~/.themes
+sudo cp -r .icons ~
+sudo cp -r .themes ~
 gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
 gsettings set org.gnome.desktop.interface icon-theme Dracula
 gsettings set org.gnome.desktop.interface gtk-theme Dracula
@@ -105,17 +105,18 @@ cd ~/.vscode/extensions/theme-dracula
 npm install
 npm run build
 #setup fish
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+echo /usr/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/bin/fish
 fish
 git clone https://github.com/oh-my-fish/oh-my-fish
 cd oh-my-fish
 bin/install --offline
 omf install eden
+omf install https://github.com/dracula/fish
 eden_toggle_host
 eden_toggle_ssh_tag
 eden_prompt_char '$'
-sudo sed -i 's/(hostname|cut -d . -f 1)ˇ$USER(hostname|cut -d . -f 1)/$USER@(hostname|cut -d . -f 1)/' ~/.config/fish/functions/fish_prompt.fish
-sudo sed -i 's/set_color blue/set color a17fd6/' ~/.config/fish/functions/fish_prompt.fish
+sudo sed -i 's/(hostname|cut -d . -f 1)ˇ$USER/$USER@(prompt_hostname)/' ~/.config/fish/functions/fish_prompt.fish
+sudo sed -i 's/set_color blue/set_color a17fd6/' ~/.config/fish/functions/fish_prompt.fish
 #reboot
 sudo reboot now
