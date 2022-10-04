@@ -99,11 +99,6 @@ gsettings set org.gnome.desktop.interface gtk-theme Dracula
 gsettings set org.gnome.shell.extensions.user-theme name Dracula
 #setup coursor
 sudo gsettings set org.gnome.desktop.interface cursor-theme Skyrim
-#configure visual studio code
-git clone https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions/theme-dracula
-cd ~/.vscode/extensions/theme-dracula
-npm install
-npm run build
 #setup fish
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
@@ -118,5 +113,10 @@ eden_toggle_ssh_tag
 eden_prompt_char '$'
 sudo sed -i 's/(hostname|cut -d . -f 1)ˇ$USER/$USER@(prompt_hostname)/' ~/.config/fish/functions/fish_prompt.fish
 sudo sed -i 's/set_color blue/set_color a17fd6/' ~/.config/fish/functions/fish_prompt.fish
+#configure visual studio code
+git clone https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions/theme-dracula
+cd ~/.vscode/extensions/theme-dracula
+npm install
+npm run build
 #reboot
 sudo reboot now
