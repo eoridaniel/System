@@ -1,7 +1,4 @@
 # System
-
-## PTA
-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
 ## Installation
 When you clone this git `cd` into it's folder, then run the following commands.
 ```
