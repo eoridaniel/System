@@ -6,9 +6,9 @@ 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
 When you clone this git `cd` into it's folder, then run the following commands.
 ```
 sudo chown +x install.sh
-/.install.sh
+./install.sh
 ```
-Then press `y` or whatever when you need.
+Then press `y` or what when you need.
 
 ## The installed packages and some other things: 
 1. yay
