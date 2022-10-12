@@ -37,6 +37,7 @@ Then press `y` or what when you need.
 22. bluez-utils
 23. xorg
 24. fish
+25. neofetch
 
 You nedd to install and configure this GNOME extensions!
 - Vitals

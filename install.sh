@@ -50,7 +50,7 @@ cd ..
 #install packages
 sudo pacman -Syu
 yay -Syu brave-bin gnome-shell-extensions gnome-browser-connector
-yay -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish
+yay -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish neofetch
 gameing
 #setup bluetooth
 sudo systemctl enable bluetooth.service
