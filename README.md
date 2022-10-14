@@ -38,6 +38,7 @@ Then press `y` or what when you need.
 23. xorg
 24. fish
 25. neofetch
+26. linux-lts, linux-lts-header
 
 You nedd to install and configure this GNOME extensions!
 - Vitals
