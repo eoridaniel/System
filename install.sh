@@ -102,15 +102,14 @@ sudo gsettings set org.gnome.desktop.interface cursor-theme Skyrim
 #setup fish
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
-fish
 git clone https://github.com/oh-my-fish/oh-my-fish
 cd oh-my-fish
-bin/install --offline
-omf install eden
-omf install https://github.com/dracula/fish
-eden_toggle_host
-eden_toggle_ssh_tag
-eden_prompt_char '$'
+echo "bin/install --offline" | fish
+echo "omf install eden" | fish
+echo "omf install https://github.com/dracula/fish" | fish
+echo "eden_toggle_host" | fish
+echo "eden_toggle_ssh_tag" | fish
+echo "eden_prompt_char '$'" | fish
 sudo sed -i 's/(hostname|cut -d . -f 1)ˇ$USER/$USER@(prompt_hostname)/' ~/.config/fish/functions/fish_prompt.fish
 sudo sed -i 's/set_color blue/set_color a17fd6/' ~/.config/fish/functions/fish_prompt.fish
 #add fish implemetation of custom bash commands
