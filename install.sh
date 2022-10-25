@@ -2,7 +2,7 @@
 
 #functions for gaming
 gameing(){
-    read -p 'Do you want to play on this mashine?(y/n)' game
+    read -p 'Do you want to play on this machine?(y/n)' game
     if [ $game == "y" ]
     then
         sudo sed -zi 's/#\[multilib\]\n#/\[multilib\]\n/' /etc/pacman.conf
@@ -40,6 +40,20 @@ gpu(){
     fi
 }
 
+gpu_managment(){
+    read -p 'This machine is a laptop?(y/n)' laptop
+    if [$laptop == "y"]
+    then
+        yay -S optimus-manager
+        cp config/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
+    elif [$laptop = "n"]
+    then
+        echo 'Install nothung for GPU managment.'
+    else
+        echo 'Wrong input!'
+        gpu_managment
+    fi
+}
 
 #install yay
 sudo git clone https://aur.archlinux.org/yay-git.git
@@ -52,6 +66,7 @@ sudo pacman -Syu
 yay -Syu brave-bin gnome-shell-extensions gnome-browser-connector
 yay -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish neofetch linux-lts linux-lts-header
 gameing
+gpu_managment
 #setup bluetooth
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
