@@ -112,6 +112,7 @@ echo "eden_toggle_ssh_tag" | fish
 echo "eden_prompt_char '$'" | fish
 sudo sed -i 's/(hostname|cut -d . -f 1)ˇ$USER/$USER@(prompt_hostname)/' ~/.config/fish/functions/fish_prompt.fish
 sudo sed -i 's/set_color blue/set_color a17fd6/' ~/.config/fish/functions/fish_prompt.fish
+cd ..
 #add fish implemetation of custom bash commands
 cp scripts/config.fish ~/config/fish/config.fish
 source ~/config/fish/config.fish
