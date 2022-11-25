@@ -42,11 +42,11 @@ gpu(){
 #gpu managment for laptops
 gpu_managment(){
     read -p 'This machine is a laptop?(y/n)' laptop
-    if [$laptop == "y"]
+    if [ $laptop == "y" ]
     then
         yay --noconfirm -S optimus-manager
         cp config/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
-    elif [$laptop = "n"]
+    elif [ $laptop == "n" ]
     then
         echo 'Install nothing for GPU managment.'
     else
@@ -57,7 +57,7 @@ gpu_managment(){
 #yubikey setup
 yubikey(){
     read -p 'Do you want to setup a Yubikey?(y/n)' key
-    if [$key == "y"]
+    if [ $key == "y" ]
     then
         sudo pacman --noconfirm -S pam-u2f
         mkdir ~/.config/Yubico
@@ -65,7 +65,7 @@ yubikey(){
         sudo sed -zi 's/auth		include		system-auth/#auth		include		system-auth/' /etc/pam.d/sudo
         sudo echo 'auth     sufficient      pam_u2f.so cue origin=pam://$hostname appid=pam://$hostname' >> /etc/pam.d/sudo
         sudo echo 'auth     required        pam_u2f.so nouserok origin=pam://$hostname appid=pam://$hostname' >> /etc/pam.d/gdm-password
-    elif [$key == "n"]
+    elif [ $key == "n" ]
     then
         echo 'Install nothing for hardwaerkey authentication!'
     else
@@ -78,7 +78,7 @@ yubikey(){
 sudo git clone https://aur.archlinux.org/yay-git.git
 sudo chown -R $USER:$USER ./yay-git
 cd yay-git
-makepkg -si
+makepkg --noconfirm -si
 cd ..
 #install packages
 sudo pacman --noconfirm -Syu
@@ -138,7 +138,7 @@ echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
 git clone https://github.com/oh-my-fish/oh-my-fish
 cd oh-my-fish
-echo "bin/install --offline" | fish
+echo "bin/install --offline && exit" | fish
 echo "omf install eden" | fish
 echo "omf install https://github.com/dracula/fish" | fish
 echo "eden_toggle_host" | fish
