@@ -39,7 +39,7 @@ gpu(){
         gpu
     fi
 }
-
+#gpu managment for laptops
 gpu_managment(){
     read -p 'This machine is a laptop?(y/n)' laptop
     if [$laptop == "y"]
@@ -52,6 +52,25 @@ gpu_managment(){
     else
         echo 'Wrong input!'
         gpu_managment
+    fi
+}
+#yubikey setup
+yubikey(){
+    read -p 'Do you want to setup a Yubikey?(y/n)' key
+    if [$key == "y"]
+    then
+        sudo pacman --noconfirm -S pam-u2f
+        mkdir ~/.config/Yubico
+        pamu2fcfg -o pam://$hostname -i pam://$hostname > ~/.config/Yubico/u2f_keys
+        sudo sed -zi 's/auth		include		system-auth/#auth		include		system-auth/' /etc/pam.d/sudo
+        sudo echo 'auth     sufficient      pam_u2f.so cue origin=pam://$hostname appid=pam://$hostname' >> /etc/pam.d/sudo
+        sudo echo 'auth     required        pam_u2f.so nouserok origin=pam://$hostname appid=pam://$hostname' >> /etc/pam.d/gdm-password
+    elif [$key == "n"]
+    then
+        echo 'Install nothing for hardwaerkey authentication!'
+    else
+        echo 'Wrong input!'
+        yubikey
     fi
 }
 
@@ -136,5 +155,7 @@ git clone https://github.com/dracula/visual-studio-code.git ~/.vscode/extensions
 cd ~/.vscode/extensions/theme-dracula
 npm install
 npm run build
+#yubikey setup
+yubikey
 #reboot
 sudo reboot now
