@@ -138,7 +138,7 @@ echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
 git clone https://github.com/oh-my-fish/oh-my-fish
 cd oh-my-fish
-echo "bin/install --offline && exit" | fish
+echo "bin/install --offline" | fish
 echo "omf install eden" | fish
 echo "omf install https://github.com/dracula/fish" | fish
 echo "eden_toggle_host" | fish
