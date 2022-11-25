@@ -6,9 +6,9 @@ gameing(){
     if [ $game == "y" ]
     then
         sudo sed -zi 's/#\[multilib\]\n#/\[multilib\]\n/' /etc/pacman.conf
-        sudo pacman -Syu
+        sudo pacman --noconfirm -Syu
         gpu
-        sudo pacman -S --needed wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls \
+        sudo pacman --noconfirm -S --needed wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls \
         mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error \
         lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo \
         sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama \
@@ -27,13 +27,13 @@ gpu(){
     read -p 'What tipy of GPU you use? AMD NVIDIA or Intel(a/n/i)' gputype
     if [ $gputype == "a" ]
     then
-        sudo pacman -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+        sudo pacman --noconfirm -S --needed lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
     elif [ $gputype == "n" ]
     then
-        sudo pacman -S --needed nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+        sudo pacman --noconfirm -S --needed nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
     elif [ $gputype == "i" ]
     then
-        sudo pacman -S --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+        sudo pacman --noconfirm -S --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
     else
         echo 'Wrong input!'
         gpu
@@ -44,11 +44,11 @@ gpu_managment(){
     read -p 'This machine is a laptop?(y/n)' laptop
     if [$laptop == "y"]
     then
-        yay -S optimus-manager
+        yay --noconfirm -S optimus-manager
         cp config/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
     elif [$laptop = "n"]
     then
-        echo 'Install nothung for GPU managment.'
+        echo 'Install nothing for GPU managment.'
     else
         echo 'Wrong input!'
         gpu_managment
@@ -62,9 +62,9 @@ cd yay-git
 makepkg -si
 cd ..
 #install packages
-sudo pacman -Syu
-yay -Syu brave-bin gnome-shell-extensions gnome-browser-connector
-yay -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish neofetch linux-lts linux-lts-header
+sudo pacman --noconfirm -Syu
+yay --noconfirm -Syu brave-bin gnome-shell-extensions gnome-browser-connector
+yay --noconfirm -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish neofetch linux-lts linux-lts-header
 gameing
 gpu_managment
 #setup bluetooth
