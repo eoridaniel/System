@@ -103,8 +103,9 @@ sudo systemctl start avahi-daemon.service
 sudo sed -i 's/hosts: mymachines resolve/hosts: mymachines mdns_minimal \[NOTFOUND=return\] resolve /' /etc/nsswitch.conf
 sudo systemctl restart cups.service
 #set user icon
-sudo cp pictures/user.jpg  /var/lib/AccountsServices/icons/$USER
-sudo sed -i "s/Icon=.*/Icon=\/var\/lib\/AccountsServices\/icons\/$USER/" /var/lib/AccountsServices/users/$USER
+sudo touch /var/lib/AccountsService/users/$USER
+sudo cp pictures/user.jpg  /var/lib/AccountsService/icons/$USER
+sudo sed -i "s/Icon=.*/Icon=\/var\/lib\/AccountsService\/icons\/$USER/" /var/lib/AccountsService/users/$USER
 #set wallpaper
 sudo cp pictures/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/wallpaper.jpg
