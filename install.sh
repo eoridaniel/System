@@ -83,7 +83,7 @@ cd ..
 #install packages
 sudo pacman --noconfirm -Syu
 yay --noconfirm -Syu brave-bin gnome-shell-extensions gnome-browser-connector
-yay --noconfirm -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish neofetch linux-lts linux-lts-headers pycharm-community-edition terminator
+yay --noconfirm -Syu visual-studio-code-bin hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish neofetch linux-lts linux-lts-headers pycharm-community-edition terminator
 gameing
 gpu_managment
 #setup bluetooth
@@ -160,6 +160,8 @@ npm install
 npm run build
 #yubikey setup
 yubikey
+#remove gnome console
+sudo pacman --noconfirm -Rsc gnome-terminal
 #clean up
 yay --noconfirm -Sc
 #reboot
