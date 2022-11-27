@@ -161,7 +161,7 @@ npm run build
 #yubikey setup
 yubikey
 #remove gnome console
-sudo pacman --noconfirm -Rsc gnome-terminal
+sudo pacman --noconfirm -Rsc gnome-terminal gnome-console
 #clean up
 yay --noconfirm -Sc
 #reboot
