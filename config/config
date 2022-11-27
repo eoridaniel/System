@@ -1,0 +1,29 @@
+[global_config]
+  geometry_hinting = True
+  tab_position = hidden
+  always_split_with_profile = True
+[keybindings]
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_shape = ibeam
+    foreground_color = "#24a801"
+    scrollback_infinite = True
+    bold_is_bright = True
+    title_hide_sizetext = True
+    title_receive_bg_color = "#c01c28"
+    title_inactive_fg_color = "#ffffff"
+    title_inactive_bg_color = "#c01c28"
+    title_font = Sans 1
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]

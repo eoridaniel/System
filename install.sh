@@ -83,7 +83,7 @@ cd ..
 #install packages
 sudo pacman --noconfirm -Syu
 yay --noconfirm -Syu brave-bin gnome-shell-extensions gnome-browser-connector
-yay --noconfirm -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish neofetch linux-lts linux-lts-headers
+yay --noconfirm -Syu visual-studio-code-bin spotify gnome-terminal-transparency hplip hplip-plugin discord cups avahi nss-mdns ntfs-3g mariadb kite bluez bluez-utils xorg fish neofetch linux-lts linux-lts-headers pycharm-community-edition terminator
 gameing
 gpu_managment
 #setup bluetooth
@@ -134,6 +134,8 @@ gsettings set org.gnome.desktop.interface gtk-theme Dracula
 gsettings set org.gnome.shell.extensions.user-theme name Dracula
 #setup coursor
 sudo gsettings set org.gnome.desktop.interface cursor-theme Skyrim
+#setup terminator
+cp config/config ~/.config/terminator/config
 #setup fish
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
