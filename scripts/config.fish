@@ -23,3 +23,4 @@ function closepp
 end
 
 
+alias update="yay --noconfirm -Syu"
