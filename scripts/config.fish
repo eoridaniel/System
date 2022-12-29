@@ -24,3 +24,4 @@ end
 
 
 alias update="yay --noconfirm -Syu"
+alias clean="yay --noconfirm -Sc"
